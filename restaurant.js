@@ -4,16 +4,17 @@ const fishMenu = (chefBudget) => {
 
 let inventory = mongerInventory(chefBudget)
 
-const menuItems = inventory.map(item => 
-'<article class="menu">\n' +
-'<h2>' + item.species + '</h2>\n' +
-    '<section class="menu__item">' + item.species + ' Soup</section>\n' +
-    '<section class="menu__item">' + item.species + ' Sandwich</section>\n' +
-    '<section class="menu__item">Grilled ' + item.species + '</section>\n' +
-'</article>\n'   
-)
+let html = `<h1>Menu</h1>\n`
 
-const html = '<h1>Menu</h1> \n' + menuItems.join('')
+for (let item of inventory) {
+    html += `<article class="menu">
+<h2>${item.species}</h2>
+    <section class="menu__item">${item.species} Soup</section>
+    <section class="menu__item">${item.species} Sandwich</section>
+    <section class="menu__item">Grilled ${item.species}</section>
+</article>`
+}
+
 return html
 }
 

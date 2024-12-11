@@ -10,7 +10,7 @@ const todaysCatch = [
 ]
 
 const boatInventory = () => {
-    return Array.from(todaysCatch)
+    return todaysCatch
 }
 
 module.exports = {boatInventory}
